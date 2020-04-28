@@ -1,6 +1,6 @@
 import { combineReducers } from "redux";
 
-const reducers = ["loadingReducer", "errorReducer", "countries"];
+const reducers = ["loadingReducer", "errorReducer", "countries", "ui", "system"];
 
 export default combineReducers(
   reducers.reduce((initial, name) => {

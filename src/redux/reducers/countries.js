@@ -1,6 +1,6 @@
 const initialState = {
   countryList: [],
-  currentCountry: null,
+  currentCountry: {},
 };
 
 export default (state = initialState, action) => {

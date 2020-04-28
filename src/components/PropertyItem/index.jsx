@@ -15,7 +15,8 @@ const PropertyItem = ({ title = "", value = "", ...otherProps }) => {
   return (
     <p className={classes.root} {...otherProps}>
       <Typography variant="body2" component="span">
-        {`${title}: `}
+        {title}
+        {`: `}
       </Typography>
       <Typography variant="body2" color="textSecondary" component="span">
         {value}

@@ -14,7 +14,7 @@ const MainTemplate = ({ input, result }) => {
 
   return (
     <Grid className={classes.root} container spacing={3}>
-      <Grid item xs={12} sm={8} md={6} lg={5}>
+      <Grid item xs={12} sm={8} md={6}>
         {input}
       </Grid>
       <Grid item container>

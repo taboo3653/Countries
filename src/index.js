@@ -8,12 +8,10 @@ import store from "./redux/store";
 import * as serviceWorker from "./serviceWorker";
 
 ReactDOM.render(
-  <React.StrictMode>
-    <Provider store={store}>
-      <CssBaseline />
-      <App />
-    </Provider>
-  </React.StrictMode>,
+  <Provider store={store}>
+    <CssBaseline />
+    <App />
+  </Provider>,
   document.getElementById("root")
 );
 

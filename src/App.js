@@ -8,12 +8,16 @@ import { useDispatch, useSelector } from "react-redux";
 import MainTemplate from "./components/Templates/MainTemplate";
 import Input from "./components/Input";
 import Content from "./components/Content";
-
 import Error from "./components/Error";
+import AppBar from "./components/AppBar";
+import SidePanel from "./components/SidePanel";
 
 import { fetchCountryList } from "./redux/actions/countries";
 
 import createErrorMessageSelector from "./redux/selectors/errorMessageSelector";
+
+import MultilangString from "./components/MultilangString";
+import dictionary from "./utils/dictionary.json";
 
 import "./App.css";
 
@@ -38,11 +42,15 @@ const App = () => {
 
   return (
     <div className="App">
+      <AppBar />
+      <SidePanel />
       <Container className={classes.container} maxWidth="lg">
-        {error ? (
-          <Error message={"Sorry! Service is unavailable"} />
-        ) : (
+        {!error ? (
           <MainTemplate input={<Input />} result={<Content />} />
+        ) : (
+          <Error
+            message={<MultilangString value={dictionary.errors.appIsUnavaliable} />}
+          />
         )}
       </Container>
     </div>

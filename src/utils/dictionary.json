@@ -1,0 +1,120 @@
+{
+  "common": {
+    "title": {
+      "en": "Countries",
+      "ru": "Страны"
+    },
+    "mainInputNote": {
+      "en": "Country name, code or currency",
+      "ru": "Имя, код или валюта страны"
+    },
+    "listOfCodes": {
+      "en": "List of codes",
+      "ru": "Список кодов"
+    }
+  },
+  "errors": {
+    "appIsUnavaliable": {
+      "en": "Sorry! Service is unavailable.",
+      "ru": "Извините! Сервис недоступен."
+    },
+    "countryInfoIsUnavailable": {
+      "en": "Sorry! Country information is unavailable.",
+      "ru": "Извините! Информация о стране недоступна."
+    }
+  },
+  "countryTitles": {
+    "basicInfo": {
+      "en": "Basic information",
+      "ru": "Основная информация"
+    },
+    "translations": {
+      "en": "Translations",
+      "ru": "Переводы"
+    },
+    "languages": {
+      "en": "Languages",
+      "ru": "Языки"
+    },
+    "currencies": {
+      "en": "Currencies",
+      "ru": "Валюты"
+    },
+    "otherInfo": {
+      "en": "Other information",
+      "ru": "Остальная информация"
+    }
+  },
+  "countryProperties": {
+    "capital": {
+      "en": "Capital",
+      "ru": "Cтолица"
+    },
+    "region": {
+      "en": "Region",
+      "ru": "Регион"
+    },
+    "subregion": {
+      "en": "Subregion",
+      "ru": "Субрегион"
+    },
+    "population": {
+      "en": "Population",
+      "ru": "Население"
+    },
+    "area": {
+      "en": "Area",
+      "ru": "Площадь"
+    },
+    "demonym": {
+      "en": "Demonym",
+      "ru": "Национальность"
+    },
+    "nativeName": {
+      "en": "Native name",
+      "ru": "Название на родном языке"
+    },
+    "topLevelDomain": {
+      "en": "Top level domains",
+      "ru": "Домены высшего уровня"
+    },
+    "timezones": {
+      "en": "Time zones",
+      "ru": "Часовые пояса"
+    },
+    "callingCodes": {
+      "en": "Calling codes",
+      "ru": "Телефонные коды"
+    },
+    "alpha2Code": {
+      "en": "2-letter code",
+      "ru": "2-ух значный код"
+    },
+    "alpha3Code": {
+      "en": "3-letter code",
+      "ru": "3-ёх значный код"
+    },
+    "altSpellings": {
+      "en": "Alternative spellings",
+      "ru": "Альтернативное произношение"
+    },
+    "latlng": {
+      "en": "Latitude/Longitude",
+      "ru": "Широта/Долгота"
+    },
+    "borders": {
+      "en": "Borders",
+      "ru": "Границы"
+    },
+    "numericCode": {
+      "en": "Numeric code",
+      "ru": "Цифровой код"
+    },
+    "cioc": {
+      "en": "Cioc"
+    },
+    "gini": {
+      "en": "Gini"
+    }
+  }
+}

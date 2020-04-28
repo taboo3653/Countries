@@ -11,6 +11,9 @@ import matchSorter from "match-sorter";
 import { fetchCountryByCode } from "../../redux/actions/countries";
 import createLoadingSelector from "../../redux/selectors/loadingSelector";
 
+import MultilangString from "../MultilangString";
+import dictionary from "../../utils/dictionary.json";
+
 const actions = ["GET_COUNTRY_LIST"];
 const loadingSelector = createLoadingSelector(actions);
 
@@ -47,7 +50,7 @@ const Input = () => {
       renderInput={(params) => (
         <TextField
           {...params}
-          label="Please enter country name, code or currency"
+          label={<MultilangString value={dictionary.common.mainInputNote} />}
           variant="outlined"
           autoFocus
         />
