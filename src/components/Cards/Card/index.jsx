@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 import { makeStyles } from "@material-ui/core/styles";
 import MuiCard from "@material-ui/core/Card";
@@ -15,7 +16,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const Card = ({ title = "", value, isLoading }) => {
+const Card = ({ title, value, isLoading }) => {
   const classes = useStyles();
 
   return !isLoading ? (
@@ -30,6 +31,18 @@ const Card = ({ title = "", value, isLoading }) => {
   ) : (
     <Skeleton className={classes.skeleton} variant="rect" />
   );
+};
+
+Card.propTypes = {
+  title: PropTypes.node,
+  value: PropTypes.node,
+  isLoading: PropTypes.bool,
+};
+
+Card.defaultProps = {
+  title: "",
+  value: "",
+  isLoading: false,
 };
 
 export default Card;

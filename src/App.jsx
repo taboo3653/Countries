@@ -2,10 +2,10 @@ import React, { useEffect } from "react";
 
 import { ThemeProvider, createMuiTheme, makeStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
+import Grid from "@material-ui/core/Grid";
 
 import { useDispatch, useSelector } from "react-redux";
 
-import MainTemplate from "./components/Templates/MainTemplate";
 import Input from "./components/Input";
 import Content from "./components/Content";
 import Error from "./components/Error";
@@ -24,6 +24,9 @@ const useStyles = makeStyles((theme) => ({
   },
   container: {
     padding: theme.spacing(3),
+  },
+  mainGrid: {
+    justifyContent: "center",
   },
 }));
 
@@ -56,7 +59,14 @@ const App = () => {
           {!error ? (
             <>
               <SidePanel />
-              <MainTemplate input={<Input />} result={<Content />} />
+              <Grid className={classes.mainGrid} container spacing={3}>
+                <Grid item xs={12} sm={8} md={6}>
+                  <Input />
+                </Grid>
+                <Grid item container>
+                  <Content />
+                </Grid>
+              </Grid>
             </>
           ) : (
             <Error

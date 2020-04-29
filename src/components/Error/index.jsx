@@ -1,8 +1,9 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 import Alert from "@material-ui/lab/Alert";
 
-const ErrorWindow = ({ message = "" }) => {
+const Error = ({ message }) => {
   return (
     <Alert variant="outlined" severity="error">
       {message}
@@ -10,4 +11,12 @@ const ErrorWindow = ({ message = "" }) => {
   );
 };
 
-export default ErrorWindow;
+Error.propTypes = {
+  message: PropTypes.node,
+};
+
+Error.defaultProps = {
+  message: "",
+};
+
+export default Error;

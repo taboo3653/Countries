@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import PropTypes from "prop-types";
 
 import Collapse from "@material-ui/core/Collapse";
 import List from "@material-ui/core/List";
@@ -7,7 +8,7 @@ import ListItemText from "@material-ui/core/ListItemText";
 import ExpandLess from "@material-ui/icons/ExpandLess";
 import ExpandMore from "@material-ui/icons/ExpandMore";
 
-const NestedList = ({ values, transition = "auto" }) => {
+const NestedList = ({ values, transition }) => {
   const [open, setOpen] = useState({});
   const handleClick = (id) => {
     setOpen({ ...open, [id]: !open[id] });
@@ -28,6 +29,16 @@ const NestedList = ({ values, transition = "auto" }) => {
       ))}
     </List>
   );
+};
+
+NestedList.propTypes = {
+  transition: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
+  values: PropTypes.arrayOf(PropTypes.arrayOf(PropTypes.node)),
+};
+
+NestedList.defaultProps = {
+  transition: "auto",
+  values: [],
 };
 
 export default NestedList;
