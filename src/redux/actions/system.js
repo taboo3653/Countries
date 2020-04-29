@@ -6,3 +6,12 @@ export const setLanguage = (language) => {
     payload: language,
   };
 };
+
+export const setTextSize = (textSize) => {
+  localStorage.setItem("textSize", textSize);
+
+  return {
+    type: "SET_TEXT_SIZE",
+    payload: textSize,
+  };
+};

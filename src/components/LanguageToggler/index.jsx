@@ -7,7 +7,7 @@ import { setLanguage } from "../../redux/actions/system";
 
 import { EN, RU } from "../../constants/languages";
 
-const LanguageToggler = ({ title = "", value = "", ...otherProps }) => {
+const LanguageToggler = () => {
   const dispatch = useDispatch();
 
   const { language } = useSelector((state) => state.system);

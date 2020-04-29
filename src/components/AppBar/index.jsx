@@ -19,7 +19,7 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: "space-between",
   },
   menuButton: { marginLeft: theme.spacing(2) },
-  title: {},
+  toolbar: { display: "flex", alignItems: "center" },
 }));
 
 const AppBar = () => {
@@ -36,7 +36,7 @@ const AppBar = () => {
         <Typography variant="h6" className={classes.title}>
           <MultilangString value={dictionary.common.title} />
         </Typography>
-        <div>
+        <div className={classes.toolbar}>
           <LanguageToggler />
           <IconButton
             edge="start"

@@ -1,7 +1,9 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import { CssBaseline } from "@material-ui/core";
 import { Provider } from "react-redux";
+
+import { CssBaseline } from "@material-ui/core";
+
 import "./index.css";
 import App from "./App";
 import store from "./redux/store";

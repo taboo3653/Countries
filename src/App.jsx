@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 
-import { makeStyles } from "@material-ui/core/styles";
+import { ThemeProvider, createMuiTheme, makeStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
 
 import { useDispatch, useSelector } from "react-redux";
@@ -13,15 +13,15 @@ import AppBar from "./components/AppBar";
 import SidePanel from "./components/SidePanel";
 
 import { fetchCountryList } from "./redux/actions/countries";
-
 import createErrorMessageSelector from "./redux/selectors/errorMessageSelector";
 
 import MultilangString from "./components/MultilangString";
 import dictionary from "./utils/dictionary.json";
 
-import "./App.css";
-
 const useStyles = makeStyles((theme) => ({
+  root: {
+    textAlign: "center",
+  },
   container: {
     padding: theme.spacing(3),
   },
@@ -40,20 +40,34 @@ const App = () => {
 
   const error = useSelector((state) => errorMessageSelector(state));
 
+  const { textSize } = useSelector((state) => state.system);
+
+  const mainTheme = createMuiTheme({
+    typography: {
+      fontSize: Number(textSize),
+    },
+  });
+
   return (
-    <div className="App">
-      <AppBar />
-      <SidePanel />
-      <Container className={classes.container} maxWidth="lg">
-        {!error ? (
-          <MainTemplate input={<Input />} result={<Content />} />
-        ) : (
-          <Error
-            message={<MultilangString value={dictionary.errors.appIsUnavaliable} />}
-          />
-        )}
-      </Container>
-    </div>
+    <ThemeProvider theme={mainTheme}>
+      <div className={classes.root}>
+        <AppBar />
+        <Container className={classes.container} maxWidth="lg">
+          {!error ? (
+            <>
+              <SidePanel />
+              <MainTemplate input={<Input />} result={<Content />} />
+            </>
+          ) : (
+            <Error
+              message={
+                <MultilangString value={dictionary.errors.appIsUnavaliable} />
+              }
+            />
+          )}
+        </Container>
+      </div>
+    </ThemeProvider>
   );
 };
 
