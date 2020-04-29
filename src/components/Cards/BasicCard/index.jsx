@@ -3,8 +3,8 @@ import React from "react";
 import PropTypes from "prop-types";
 import { uid } from "react-uid";
 
-import Card from "../Card";
-import PropertyItem from "../../PropertyItem";
+import Card from "components/Cards/Card";
+import PropertyItem from "components/PropertyItem";
 
 const BasicCard = ({ values, ...otherProps }) => {
   return (
@@ -17,10 +17,10 @@ const BasicCard = ({ values, ...otherProps }) => {
   );
 };
 BasicCard.propTypes = {
-  values: PropTypes.arrayOf(PropTypes.arrayOf(PropTypes.node)),
+  values: PropTypes.arrayOf(PropTypes.arrayOf(PropTypes.node))
 };
 
 BasicCard.defaultProps = {
-  values: [],
+  values: []
 };
 export default BasicCard;

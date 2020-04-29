@@ -1,7 +1,7 @@
 import { useSelector } from "react-redux";
 import PropTypes from "prop-types";
 
-import { EN } from "../../constants/languages";
+import { EN } from "constants/languages";
 
 const MultilangString = ({ value }) => {
   const { language } = useSelector((state) => state.system);
@@ -12,12 +12,12 @@ const MultilangString = ({ value }) => {
 
 MultilangString.propTypes = {
   value: PropTypes.shape({
-    en: PropTypes.string,
-  }),
+    en: PropTypes.string
+  })
 };
 
 MultilangString.defaultProps = {
-  value: { en: "" },
+  value: { en: "" }
 };
 
 export default MultilangString;

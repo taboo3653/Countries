@@ -3,9 +3,9 @@ import { useSelector, useDispatch } from "react-redux";
 import ToggleButton from "@material-ui/lab/ToggleButton";
 import ToggleButtonGroup from "@material-ui/lab/ToggleButtonGroup";
 
-import { setLanguage } from "../../redux/actions/system";
+import { setLanguage } from "mRedux/actions/system";
 
-import { EN, RU } from "../../constants/languages";
+import { EN, RU } from "constants/languages";
 
 const LanguageToggler = () => {
   const dispatch = useDispatch();

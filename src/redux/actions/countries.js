@@ -1,5 +1,5 @@
-import { getAllCountries, getCountryByCode } from "../../api/restCountriesApi";
-import { getItem, setItem } from "../../utils/cacheService";
+import { getAllCountries, getCountryByCode } from "api/restCountriesApi";
+import { getItem, setItem } from "utils/cacheService";
 
 export const fetchCountryList = () => async (dispatch) => {
   dispatch({ type: "GET_COUNTRY_LIST_REQUEST" });
@@ -9,12 +9,12 @@ export const fetchCountryList = () => async (dispatch) => {
 
     dispatch({
       type: "GET_COUNTRY_LIST_SUCCESS",
-      payload: countryList,
+      payload: countryList
     });
   } catch (err) {
     dispatch({
       type: "GET_COUNTRY_LIST_FAILURE",
-      payload: err,
+      payload: err
     });
   }
 };
@@ -34,12 +34,12 @@ export const fetchCountryByCode = (code) => async (dispatch) => {
 
     dispatch({
       type: "GET_COUNTRY_SUCCESS",
-      payload: country,
+      payload: country
     });
   } catch (err) {
     dispatch({
       type: "GET_COUNTRY_FAILURE",
-      payload: err,
+      payload: err
     });
   }
 };

@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 
 import CardMedia from "@material-ui/core/CardMedia";
 
-import Card from "../Card";
+import Card from "components/Cards/Card";
 
 const MainCard = ({ title, imageUrl, ...otherProps }) => {
   return (
@@ -19,12 +19,12 @@ const MainCard = ({ title, imageUrl, ...otherProps }) => {
 
 MainCard.propTypes = {
   title: PropTypes.string,
-  imageUrl: PropTypes.string,
+  imageUrl: PropTypes.string
 };
 
 MainCard.defaultProps = {
   title: "",
-  imageUrl: "",
+  imageUrl: ""
 };
 
 export default MainCard;

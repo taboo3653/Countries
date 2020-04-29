@@ -8,11 +8,11 @@ import { useDispatch, useSelector } from "react-redux";
 
 import matchSorter from "match-sorter";
 
-import { fetchCountryByCode } from "../../redux/actions/countries";
-import createLoadingSelector from "../../redux/selectors/loadingSelector";
+import { fetchCountryByCode } from "mRedux/actions/countries";
+import createLoadingSelector from "mRedux/selectors/loadingSelector";
 
-import MultilangString from "../MultilangString";
-import dictionary from "../../utils/dictionary.json";
+import MultilangString from "components/MultilangString";
+import dictionary from "utils/dictionary.json";
 
 const actions = ["GET_COUNTRY_LIST"];
 const loadingSelector = createLoadingSelector(actions);
@@ -29,8 +29,8 @@ const Input = () => {
       keys: [
         { threshold: matchSorter.rankings.CONTAINS, key: "name" },
         "alpha3Code",
-        (item) => item.currencies.map((i) => i.code),
-      ],
+        (item) => item.currencies.map((i) => i.code)
+      ]
     });
 
   const handleSelect = (countryObject) => {

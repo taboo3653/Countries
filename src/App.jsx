@@ -6,28 +6,28 @@ import Grid from "@material-ui/core/Grid";
 
 import { useDispatch, useSelector } from "react-redux";
 
-import Input from "./components/Input";
-import Content from "./components/Content";
-import Error from "./components/Error";
-import AppBar from "./components/AppBar";
-import SidePanel from "./components/SidePanel";
+import Input from "components/Input";
+import Content from "components/Content";
+import Error from "components/Error";
+import AppBar from "components/AppBar";
+import SidePanel from "components/SidePanel";
 
-import { fetchCountryList } from "./redux/actions/countries";
-import createErrorMessageSelector from "./redux/selectors/errorMessageSelector";
+import { fetchCountryList } from "mRedux/actions/countries";
+import createErrorMessageSelector from "mRedux/selectors/errorMessageSelector";
 
-import MultilangString from "./components/MultilangString";
-import dictionary from "./utils/dictionary.json";
+import MultilangString from "components/MultilangString";
+import dictionary from "utils/dictionary.json";
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    textAlign: "center",
+    textAlign: "center"
   },
   container: {
-    padding: theme.spacing(3),
+    padding: theme.spacing(3)
   },
   mainGrid: {
-    justifyContent: "center",
-  },
+    justifyContent: "center"
+  }
 }));
 
 const actions = ["GET_COUNTRY_LIST"];
@@ -47,8 +47,8 @@ const App = () => {
 
   const mainTheme = createMuiTheme({
     typography: {
-      fontSize: Number(textSize),
-    },
+      fontSize: Number(textSize)
+    }
   });
 
   return (

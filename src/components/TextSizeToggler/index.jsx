@@ -5,9 +5,9 @@ import ToggleButton from "@material-ui/lab/ToggleButton";
 import ToggleButtonGroup from "@material-ui/lab/ToggleButtonGroup";
 import TextFieldsIcon from "@material-ui/icons/TextFields";
 
-import { setTextSize } from "../../redux/actions/system";
+import { setTextSize } from "mRedux/actions/system";
 
-import { MD, LG, XL } from "../../constants/textSize";
+import { MD, LG, XL } from "constants/textSize";
 
 const TextSizeToggler = () => {
   const dispatch = useDispatch();

@@ -1,4 +1,4 @@
-import { get } from "../utils/fetch";
+import { get } from "utils/fetch";
 
 const url = "https://restcountries.eu/rest/v2/";
 

@@ -1,9 +1,9 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import Card from "../Card";
-import PropertyItem from "../../PropertyItem";
-import NestedList from "../../NestedList";
+import Card from "components/Cards/Card";
+import PropertyItem from "components/PropertyItem";
+import NestedList from "components/NestedList";
 
 const NestedListCard = ({ values, ...otherProps }) => {
   return (
@@ -16,7 +16,7 @@ const NestedListCard = ({ values, ...otherProps }) => {
               .filter(([nestedKey]) => nestedKey !== "name")
               .map(([nestedKey, nestedItem]) => (
                 <PropertyItem key={nestedKey} title={nestedKey} value={nestedItem} />
-              )),
+              ))
           ])}
         />
       }
@@ -26,11 +26,11 @@ const NestedListCard = ({ values, ...otherProps }) => {
 };
 
 NestedListCard.propTypes = {
-  values: PropTypes.arrayOf(PropTypes.object),
+  values: PropTypes.arrayOf(PropTypes.object)
 };
 
 NestedListCard.defaultProps = {
-  values: [],
+  values: []
 };
 
 export default NestedListCard;

@@ -1,8 +1,8 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import Card from "../Card";
-import PropertyItem from "../../PropertyItem";
+import Card from "components/Cards/Card";
+import PropertyItem from "components/PropertyItem";
 
 const ListCard = ({ values = {}, ...otherProps }) => {
   return (
@@ -17,11 +17,11 @@ const ListCard = ({ values = {}, ...otherProps }) => {
 
 ListCard.propTypes = {
   // eslint-disable-next-line react/forbid-prop-types
-  values: PropTypes.object,
+  values: PropTypes.object
 };
 
 ListCard.defaultProps = {
-  values: {},
+  values: {}
 };
 
 export default ListCard;

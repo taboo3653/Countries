@@ -4,25 +4,25 @@ import { useSelector, useDispatch } from "react-redux";
 import { makeStyles } from "@material-ui/core/styles";
 import SwipeableDrawer from "@material-ui/core/SwipeableDrawer";
 
-import PropertyItem from "../PropertyItem";
-import NestedList from "../NestedList";
-import TextSizeToggler from "../TextSizeToggler";
+import PropertyItem from "components/PropertyItem";
+import NestedList from "components/NestedList";
+import TextSizeToggler from "components/TextSizeToggler";
 
-import { toggleWithValueSidePanel } from "../../redux/actions/ui";
-import createLoadingSelector from "../../redux/selectors/loadingSelector";
+import { toggleWithValueSidePanel } from "mRedux/actions/ui";
+import createLoadingSelector from "mRedux/selectors/loadingSelector";
 
-import MultilangString from "../MultilangString";
-import dictionary from "../../utils/dictionary.json";
+import MultilangString from "components/MultilangString";
+import dictionary from "utils/dictionary.json";
 
 const useStyles = makeStyles((theme) => ({
   container: {
-    width: "300px",
+    width: "300px"
   },
   toolbar: {
     display: "flex",
     justifyContent: "center",
-    padding: theme.spacing(2),
-  },
+    padding: theme.spacing(2)
+  }
 }));
 
 const actions = ["GET_COUNTRY_LIST"];
@@ -67,8 +67,8 @@ const SidePanel = () => {
                 <MultilangString value={dictionary.common.listOfCodes} />,
                 countryList.map(({ name, alpha3Code }) => (
                   <PropertyItem key={name} title={name} value={alpha3Code} />
-                )),
-              ],
+                ))
+              ]
             ]}
             transition={0}
           />

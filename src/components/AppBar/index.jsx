@@ -8,18 +8,18 @@ import IconButton from "@material-ui/core/IconButton";
 import Typography from "@material-ui/core/Typography";
 import MenuIcon from "@material-ui/icons/Menu";
 
-import { toggleSidePanel } from "../../redux/actions/ui";
-import LanguageToggler from "../LanguageToggler";
+import { toggleSidePanel } from "mRedux/actions/ui";
+import LanguageToggler from "components/LanguageToggler";
 
-import MultilangString from "../MultilangString";
-import dictionary from "../../utils/dictionary.json";
+import MultilangString from "components/MultilangString";
+import dictionary from "utils/dictionary.json";
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    justifyContent: "space-between",
+    justifyContent: "space-between"
   },
   menuButton: { marginLeft: theme.spacing(2) },
-  toolbar: { display: "flex", alignItems: "center" },
+  toolbar: { display: "flex", alignItems: "center" }
 }));
 
 const AppBar = () => {

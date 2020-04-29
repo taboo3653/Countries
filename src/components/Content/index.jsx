@@ -4,22 +4,22 @@ import { useSelector } from "react-redux";
 import { makeStyles } from "@material-ui/core/styles";
 import Grid from "@material-ui/core/Grid";
 
-import MainCard from "../Cards/MainCard";
-import BasicCard from "../Cards/BasicCard";
-import NestedListCard from "../Cards/NestedListCard";
-import ListCard from "../Cards/ListCard";
-import Error from "../Error";
+import MainCard from "components/Cards/MainCard";
+import BasicCard from "components/Cards/BasicCard";
+import NestedListCard from "components/Cards/NestedListCard";
+import ListCard from "components/Cards/ListCard";
+import Error from "components/Error";
 
-import createLoadingSelector from "../../redux/selectors/loadingSelector";
-import createErrorMessageSelector from "../../redux/selectors/errorMessageSelector";
+import createLoadingSelector from "mRedux/selectors/loadingSelector";
+import createErrorMessageSelector from "mRedux/selectors/errorMessageSelector";
 
-import MultilangString from "../MultilangString";
-import dictionary from "../../utils/dictionary.json";
+import MultilangString from "components/MultilangString";
+import dictionary from "utils/dictionary.json";
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    justifyContent: "center",
-  },
+    justifyContent: "center"
+  }
 }));
 
 const actions = ["GET_COUNTRY"];
@@ -56,12 +56,12 @@ const Content = () => {
     latlng,
     borders,
     cioc,
-    gini,
+    gini
   } = currentCountry;
 
   const getPropertyPair = (title, value) => [
     <MultilangString value={dictionary.countryProperties[title]} />,
-    value,
+    value
   ];
 
   return (
@@ -94,7 +94,7 @@ const Content = () => {
                   getPropertyPair(
                     "callingCodes",
                     (callingCodes || []).map((code) => `+${code}`).join(", ")
-                  ),
+                  )
                 ]}
                 isLoading={isFetching}
               />
@@ -138,7 +138,7 @@ const Content = () => {
                   getPropertyPair("latlng", (latlng || []).join("/")),
                   getPropertyPair("borders", (borders || []).join(", ")),
                   getPropertyPair("cioc", cioc),
-                  getPropertyPair("gini", gini),
+                  getPropertyPair("gini", gini)
                 ]}
                 isLoading={isFetching}
               />
