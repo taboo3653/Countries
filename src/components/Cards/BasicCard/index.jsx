@@ -1,7 +1,6 @@
 import React from "react";
 
 import PropTypes from "prop-types";
-import { uid } from "react-uid";
 
 import Card from "components/Cards/Card";
 import PropertyItem from "components/PropertyItem";
@@ -10,7 +9,7 @@ const BasicCard = ({ values, ...otherProps }) => {
   return (
     <Card
       value={values.map(([key, value]) => (
-        <PropertyItem key={uid(key)} title={key} value={value} />
+        <PropertyItem key={key} title={key} value={value} />
       ))}
       {...otherProps}
     />

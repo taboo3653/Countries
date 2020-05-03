@@ -6,8 +6,8 @@ import Typography from "@material-ui/core/Typography";
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    padding: `0px ${theme.spacing(2)}px`,
-  },
+    padding: `0px ${theme.spacing(2)}px`
+  }
 }));
 
 const PropertyItem = ({ title, value, ...otherProps }) => {
@@ -28,12 +28,12 @@ const PropertyItem = ({ title, value, ...otherProps }) => {
 
 PropertyItem.propTypes = {
   title: PropTypes.node,
-  value: PropTypes.node,
+  value: PropTypes.node
 };
 
 PropertyItem.defaultProps = {
   title: "",
-  value: "",
+  value: ""
 };
 
 export default PropertyItem;

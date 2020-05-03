@@ -11,7 +11,7 @@ import matchSorter from "match-sorter";
 import { fetchCountryByCode } from "mRedux/actions/countries";
 import createLoadingSelector from "mRedux/selectors/loadingSelector";
 
-import MultilangString from "components/MultilangString";
+import useMultilang from "hooks/useMultilang";
 import dictionary from "utils/dictionary.json";
 
 const actions = ["GET_COUNTRY_LIST"];
@@ -19,6 +19,7 @@ const loadingSelector = createLoadingSelector(actions);
 
 const Input = () => {
   const dispatch = useDispatch();
+  const getMultilang = useMultilang();
 
   const isFetching = useSelector((state) => loadingSelector(state));
 
@@ -50,7 +51,7 @@ const Input = () => {
       renderInput={(params) => (
         <TextField
           {...params}
-          label={<MultilangString value={dictionary.common.mainInputNote} />}
+          label={getMultilang(dictionary.common.mainInputNote)}
           variant="outlined"
           autoFocus
         />

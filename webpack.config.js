@@ -25,7 +25,8 @@ module.exports = {
       api: path.resolve(__dirname, "./src/api"),
       constants: path.resolve(__dirname, "./src/constants"),
       mRedux: path.resolve(__dirname, "./src/redux"),
-      utils: path.resolve(__dirname, "./src/utils")
+      utils: path.resolve(__dirname, "./src/utils"),
+      hooks: path.resolve(__dirname, "./src/hooks")
     }
   },
   module: {

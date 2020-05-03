@@ -13,7 +13,8 @@ import Error from "components/Error";
 import createLoadingSelector from "mRedux/selectors/loadingSelector";
 import createErrorMessageSelector from "mRedux/selectors/errorMessageSelector";
 
-import MultilangString from "components/MultilangString";
+import useMultilang from "hooks/useMultilang";
+
 import dictionary from "utils/dictionary.json";
 
 const useStyles = makeStyles((theme) => ({
@@ -28,6 +29,7 @@ const errorMessageSelector = createErrorMessageSelector(actions);
 
 const Content = () => {
   const classes = useStyles();
+  const getMultilang = useMultilang();
 
   const { currentCountry } = useSelector((state) => state.countries);
   const isFetching = useSelector((state) => loadingSelector(state));
@@ -60,7 +62,7 @@ const Content = () => {
   } = currentCountry;
 
   const getPropertyPair = (title, value) => [
-    <MultilangString value={dictionary.countryProperties[title]} />,
+    getMultilang(dictionary.countryProperties[title]),
     value
   ];
 
@@ -74,9 +76,7 @@ const Content = () => {
             </Grid>
             <Grid item xs={12} sm={6} md={4}>
               <BasicCard
-                title={
-                  <MultilangString value={dictionary.countryTitles.basicInfo} />
-                }
+                title={getMultilang(dictionary.countryTitles.basicInfo)}
                 values={[
                   getPropertyPair("capital", capital),
                   getPropertyPair("region", region),
@@ -101,36 +101,28 @@ const Content = () => {
             </Grid>
             <Grid item xs={12} sm={6} md={4}>
               <ListCard
-                title={
-                  <MultilangString value={dictionary.countryTitles.translations} />
-                }
+                title={getMultilang(dictionary.countryTitles.translations)}
                 values={translations}
                 isLoading={isFetching}
               />
             </Grid>
             <Grid item xs={12} sm={6} md={4}>
               <NestedListCard
-                title={
-                  <MultilangString value={dictionary.countryTitles.languages} />
-                }
+                title={getMultilang(dictionary.countryTitles.languages)}
                 values={languages}
                 isLoading={isFetching}
               />
             </Grid>
             <Grid item xs={12} sm={6} md={4}>
               <NestedListCard
-                title={
-                  <MultilangString value={dictionary.countryTitles.currencies} />
-                }
+                title={getMultilang(dictionary.countryTitles.currencies)}
                 values={currencies}
                 isLoading={isFetching}
               />
             </Grid>
             <Grid item xs={12} sm={6} md={4}>
               <BasicCard
-                title={
-                  <MultilangString value={dictionary.countryTitles.otherInfo} />
-                }
+                title={getMultilang(dictionary.countryTitles.otherInfo)}
                 values={[
                   getPropertyPair("alpha2Code", alpha2Code),
                   getPropertyPair("alpha3Code", alpha3Code),
@@ -148,9 +140,7 @@ const Content = () => {
       ) : (
         <Grid item xs={12} sm={8} md={6} lg={5}>
           <Error
-            message={
-              <MultilangString value={dictionary.errors.countryInfoIsUnavailable} />
-            }
+            message={getMultilang(dictionary.errors.countryInfoIsUnavailable)}
           />
         </Grid>
       )}

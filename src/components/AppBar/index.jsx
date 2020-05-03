@@ -11,8 +11,9 @@ import MenuIcon from "@material-ui/icons/Menu";
 import { toggleSidePanel } from "mRedux/actions/ui";
 import LanguageToggler from "components/LanguageToggler";
 
-import MultilangString from "components/MultilangString";
 import dictionary from "utils/dictionary.json";
+
+import useMultilang from "hooks/useMultilang";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -25,6 +26,7 @@ const useStyles = makeStyles((theme) => ({
 const AppBar = () => {
   const classes = useStyles();
   const dispatch = useDispatch();
+  const getMultilang = useMultilang();
 
   const handleClick = () => {
     dispatch(toggleSidePanel());
@@ -34,7 +36,7 @@ const AppBar = () => {
     <MuiAppBar position="sticky">
       <Toolbar className={classes.root}>
         <Typography variant="h6" className={classes.title}>
-          <MultilangString value={dictionary.common.title} />
+          {getMultilang(dictionary.common.title)}
         </Typography>
         <div className={classes.toolbar}>
           <LanguageToggler />

@@ -11,7 +11,7 @@ import TextSizeToggler from "components/TextSizeToggler";
 import { toggleWithValueSidePanel } from "mRedux/actions/ui";
 import createLoadingSelector from "mRedux/selectors/loadingSelector";
 
-import MultilangString from "components/MultilangString";
+import useMultilang from "hooks/useMultilang";
 import dictionary from "utils/dictionary.json";
 
 const useStyles = makeStyles((theme) => ({
@@ -31,6 +31,7 @@ const loadingSelector = createLoadingSelector(actions);
 const SidePanel = () => {
   const classes = useStyles();
   const dispatch = useDispatch();
+  const getMultilang = useMultilang();
 
   const { isOpenSidePanel } = useSelector((state) => state.ui);
   const { countryList } = useSelector((state) => state.countries);
@@ -64,7 +65,7 @@ const SidePanel = () => {
           <NestedList
             values={[
               [
-                <MultilangString value={dictionary.common.listOfCodes} />,
+                getMultilang(dictionary.common.listOfCodes),
                 countryList.map(({ name, alpha3Code }) => (
                   <PropertyItem key={name} title={name} value={alpha3Code} />
                 ))

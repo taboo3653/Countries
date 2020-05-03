@@ -15,7 +15,7 @@ import SidePanel from "components/SidePanel";
 import { fetchCountryList } from "mRedux/actions/countries";
 import createErrorMessageSelector from "mRedux/selectors/errorMessageSelector";
 
-import MultilangString from "components/MultilangString";
+import useMultilang from "hooks/useMultilang";
 import dictionary from "utils/dictionary.json";
 
 const useStyles = makeStyles((theme) => ({
@@ -36,6 +36,7 @@ const errorMessageSelector = createErrorMessageSelector(actions);
 const App = () => {
   const classes = useStyles();
   const dispatch = useDispatch();
+  const getMultilang = useMultilang();
 
   useEffect(() => {
     dispatch(fetchCountryList());
@@ -69,11 +70,7 @@ const App = () => {
               </Grid>
             </>
           ) : (
-            <Error
-              message={
-                <MultilangString value={dictionary.errors.appIsUnavaliable} />
-              }
-            />
+            <Error message={getMultilang(dictionary.errors.appIsUnavaliable)} />
           )}
         </Container>
       </div>
